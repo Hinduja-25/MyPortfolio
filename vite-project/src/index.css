@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Space Mono", "Courier Prime", Courier, monospace;
+  --font-handwriting: "Caveat", cursive;
+
+  /* Custom retro-styled color variables */
+  --color-retro-cream: #f6f2e8;
+  --color-retro-beige: #efe9d9;
+  --color-retro-olive: #5c674e;
+  --color-retro-olive-dark: #464f3b;
+  --color-retro-charcoal: #3c4233;
+  --color-retro-terracotta: #cc6a5c;
+  --color-retro-amber: #e6a745;
+  --color-retro-sand: #dfd8be;
+}
+
+/* Global Reset & Base Setup */
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--color-retro-beige);
+  color: var(--color-retro-charcoal);
+  font-family: var(--font-sans);
+}
+
+/* Vintage Graph Paper / Grid Backgrounds */
+.vintage-grid-paper {
+  background-color: #f6f2e8;
+  background-image: 
+    linear-gradient(to right, rgba(92, 103, 78, 0.075) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(92, 103, 78, 0.075) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Dot grid alternate background style */
+.vintage-dot-paper {
+  background-color: #f6f2e8;
+  background-image: radial-gradient(rgba(92, 103, 78, 0.12) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Sage horizontal stripes style */
+.vintage-stripes-paper {
+  background-color: #f1ebd9;
+  background-image: linear-gradient(0deg, rgba(92, 103, 78, 0.04) 50%, transparent 50%);
+  background-size: 100% 30px;
+}
+
+/* CRT monitor line scanlines overlay effect */
+.crt-scanlines {
+  position: relative;
+}
+.crt-scanlines::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.04));
+  z-index: 10;
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Vintage custom scrollbar */
+.scrollbar-retro::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+.scrollbar-retro::-webkit-scrollbar-track {
+  background: #f0ebd9;
+  border-left: 2px solid #3c4233;
+}
+.scrollbar-retro::-webkit-scrollbar-thumb {
+  background: #efe9d9;
+  border: 2px solid #3c4233;
+  box-shadow: inset -2px -2px 0px 0px rgba(60, 66, 51, 0.4);
+}
+.scrollbar-retro::-webkit-scrollbar-thumb:hover {
+  background: #e2dbca;
+}
+.scrollbar-retro::-webkit-scrollbar-thumb:active {
+  background: #d6cca4;
+  box-shadow: inset 2px 2px 0px 0px rgba(60, 66, 51, 0.4);
+}
+.scrollbar-retro::-webkit-scrollbar-corner {
+  background: #f0ebd9;
+}
+
+/* Solid retro shadows */
+.retro-btn {
+  background-color: #efe9d9;
+  border: 2px solid #3c4233;
+  color: #3c4233;
+  font-weight: 500;
+  box-shadow: 2px 2px 0px 0px rgba(60, 66, 51, 1);
+  transition: transform 0.1s, box-shadow 0.1s;
+  cursor: pointer;
+}
+.retro-btn:hover {
+  background-color: #e6dfcb;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px 0px rgba(60, 66, 51, 1);
+}
+.retro-btn:active {
+  background-color: #dcd4bc;
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px 0px rgba(60, 66, 51, 1);
+}
+
+.retro-input {
+  background-color: #fdfbf7;
+  border: 2px solid #3c4233;
+  color: #3c4233;
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  outline: none;
+}
+.retro-input:focus {
+  border-color: #5c674e;
+  box-shadow: inset 1px 1px 3px 0px rgba(60, 66, 51, 0.2);
+}
+
+/* Blinking terminal cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background-color: currentColor;
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+  vertical-align: middle;
+}
+
+/* Double-border frame utility */
+.retro-double-frame {
+  border: 4px double #3c4233;
+}
+
+@keyframes window-minimize {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.8) translateY(50px); }
+}
+
+.animate-window-minimize {
+  animation: window-minimize 0.2s ease-in forwards;
+}
+
+@keyframes window-restore {
+  from { opacity: 0; transform: scale(0.8) translateY(50px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-window-restore {
+  animation: window-restore 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
