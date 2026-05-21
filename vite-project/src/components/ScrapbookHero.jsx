@@ -8,8 +8,7 @@ export default function ScrapbookHero() {
     <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[5]">
       {/* Main Scrapbook Container */}
       <div
-        className="relative pointer-events-auto cursor-pointer"
-        style={{ width: '450px', height: '350px', marginTop: '20px' }}
+        className="relative pointer-events-auto cursor-pointer w-full max-w-[450px] sm:h-[350px] h-[70vh] mx-auto mt-5 scale-125"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -76,9 +75,8 @@ export default function ScrapbookHero() {
 
         {/* Floating Developer Elements (Emerge on hover) */}
         {/* 1. Tiny Terminal Popup */}
-        <div className={`absolute transition-all duration-700 ease-out z-0 flex flex-col overflow-hidden bg-[#2a2432]/95 backdrop-blur-sm rounded-lg border border-pink-200/20 shadow-[0_4px_15px_rgba(0,0,0,0.1)] w-44 ${
-          isHovered ? 'top-[-10px] -left-12 rotate-[-4deg] opacity-100' : 'top-[50px] left-0 rotate-0 opacity-0'
-        }`}>
+        <div className={`absolute transition-all duration-700 ease-out z-0 flex flex-col overflow-hidden bg-[#2a2432]/95 backdrop-blur-sm rounded-lg border border-pink-200/20 shadow-[0_4px_15px_rgba(0,0,0,0.1)] w-44 ${isHovered ? 'top-[-10px] -left-12 rotate-[-4deg] opacity-100' : 'top-[50px] left-0 rotate-0 opacity-0'
+          }`}>
           <div className="h-4 bg-[#1f1926]/90 flex items-center px-2 gap-1">
             <div className="w-1.5 h-1.5 rounded-full bg-[#ff5f56]" />
             <div className="w-1.5 h-1.5 rounded-full bg-[#ffbd2e]" />
@@ -92,11 +90,10 @@ export default function ScrapbookHero() {
         </div>
 
         {/* 2. Sticky-note Code Snippet */}
-        <div className={`absolute transition-all duration-700 ease-out z-0 bg-[#fff9c4] text-[#5c674e] p-2 rounded shadow-sm font-mono text-[9px] w-36 border border-yellow-200/50 ${
-          isHovered ? 'top-[40px] -right-16 rotate-[6deg] opacity-100' : 'top-[80px] right-0 rotate-0 opacity-0'
-        }`}>
+        <div className={`absolute transition-all duration-700 ease-out z-0 bg-[#fff9c4] text-[#5c674e] p-2 rounded shadow-sm font-mono text-[9px] w-36 border border-yellow-200/50 ${isHovered ? 'top-[40px] -right-16 rotate-[6deg] opacity-100' : 'top-[80px] right-0 rotate-0 opacity-0'
+          }`}>
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -mt-1.5 w-8 h-3 bg-pink-200/60 rotate-[-3deg] shadow-sm" />
-          <span className="text-[#c678dd] font-bold">const</span> dream = <br/><span className="text-[#98c379]">"learn and grow"</span>;
+          <span className="text-[#c678dd] font-bold">const</span> dream = <br /><span className="text-[#98c379]">"learn and grow"</span>;
         </div>
 
         {/* Decorative Stickers (Z-index high to overlap everything) */}
