@@ -1,16 +1,41 @@
-# React + Vite
+# MyPortfolio – Creative Developer Scrapbook
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **React + Vite** based personal portfolio that feels like a digital scrapbook.  
+It combines a nostalgic desktop UI with modern, pastel‑colored developer aesthetics.
 
-Currently, two official plugins are available:
+## Features
+- **Scrapbook Hero** – an envelope that serves as the main focal point.
+- **Floating developer pop‑ups** (tiny terminal, sticky‑note code snippet, folder icon) that emerge from the envelope on hover.
+- **Achievements folder** on the desktop, opening a sleek window that showcases milestones.
+- **Custom taskbar** with a terminal‑style status line (`>_ building my story…`).
+- **Soft pastel theme** using Tailwind CSS v4 `@theme` block and custom retro colors.
+- **Responsive drag‑and‑drop windows** powered by a lightweight hook.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **React** (hooks)
+- **Vite** for fast dev server and HMR
+- **Tailwind CSS v4** (`@theme` for fonts & colors)
+- **Lucide‑react** icons
+- **React‑icons** for additional tech icons (React, Python, etc.)
 
-## React Compiler
+## Getting Started
+```bash
+# Clone the repo
+git clone <repo‑url>
+cd MyPortfolio/vite-project
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Install dependencies
+npm install
 
-## Expanding the ESLint configuration
+# Run the dev server
+npm run dev
+```
+Open <http://localhost:5173> to explore the interactive desktop.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Customisation
+- Edit `src/index.css` to tweak the color palette in the `@theme` block.
+- Modify `src/components/ScrapbookHero.jsx` to change the floating pop‑ups.
+- Add new content windows in `src/contents/*` and register them in `src/App.jsx`.
+
+## License
+MIT © Hinduja Simhadri
